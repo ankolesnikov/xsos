@@ -1,0 +1,6 @@
+FROM fedora
+RUN dnf install -y util-linux procps-ng ncurses glibc-langpack-en less && dnf clean all
+RUN curl -Lo /usr/local/bin/xsos bit.ly/xsos-direct && chmod +x /usr/local/bin/xsos
+RUN curl -Lo /usr/local/bin/rsar raw.github.com/ryran/rsar/master/rsar && chmod +x /usr/local/bin/rsar
+ENV LC_ALL=en_US.UTF-8
+WORKDIR /tmp/sos
